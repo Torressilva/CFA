@@ -74,4 +74,4 @@ Este proyecto fue desarrollado como parte del proyecto de **Datos Abiertos** de 
 
 # Licencia
 
-Este proyecto se publica bajo la licensia **_Apache, versión 2_**, y se anexa una copia en la carpeta raíz del mismo.
+Este proyecto se publica bajo la licensia **_Apache, versión 2_**, y se anexa una copia, en la carpeta raíz, de la misma.
