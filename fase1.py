@@ -10,6 +10,15 @@ import nltk
 fecha = "2@/Sept./199o";
 
 tokens = nltk.regexp_tokenize(fecha, '''\W+''')
-print tokens
+
+tokens = ''.join(tokens)
+
+c = Counter(tokens)
+inv_map = {}
+for k,v in c.iteritems():
+    inv_map[v]=inv_map.get(v,[])
+    inv_map[v].append(k)
+
+print inv_map.items()
 
 print fecha.split('/')
