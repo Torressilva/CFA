@@ -6,6 +6,8 @@ __date__ ="$25-ene-2014 12:36:13$"
 
 
 import nltk
+from collections import Counter
+import difflib
 
 fecha = "2@/Sept./199o";
 
@@ -41,3 +43,8 @@ if inv_c.has_key(2):
 else:
     #No se puede resolver en la fase 1. Marcar elemento para mandarlo a la fase2
     print 'Mandar a la fase 2'
+    
+    
+    
+#Ve si la palabra se parece a algún mes que tenemos en una lista
+print difflib.get_close_matches('Sept.', ['Septiembre', 'Octubre', 'Noviembre', 'Diciembre'], 1, .25)
