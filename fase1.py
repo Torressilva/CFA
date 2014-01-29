@@ -30,11 +30,14 @@ print inv_c.items()
 #Obtener el caracter que se repite dos veces
 #Si no hay o si hay varios de ellos, entonces no se puede saber exactamente que
 #caracter es el separador y ese caso se deja para la siguiente fase.
-if inv_c.has_key(2) & len(inv_c[2])==1:
-    #Se accede primero al caracter que tenga 2 repeticiones, esta regresa una
-    #lista con un solo elemento. Accesamos el primer y unico elemento de la
-    #lista con el comando [0].
-    print fecha.split(inv_c[2][0])
+if inv_c.has_key(2):
+    if len(inv_c[2])==1:
+        #Se accede primero al caracter que tenga 2 repeticiones, esta regresa una
+        #lista con un solo elemento. Accesamos el primer y unico elemento de la
+        #lista con el comando [0].
+        print fecha.split(inv_c[2][0])
+    else:
+        print 'Mandar a la fase 2'
 else:
     #No se puede resolver en la fase 1. Marcar elemento para mandarlo a la fase2
     print 'Mandar a la fase 2'
