@@ -1,10 +1,6 @@
-#
-# Pendientes:
-# 1. Archivos pesados
-#
-
 from mmap import mmap, ACCESS_READ
-from xlrd import open_workbook
+from xlrd import open_workbook, xldate_as_tuple, cellname
+from datetime import date, datetime, time
 
 #
 # Open
@@ -16,7 +12,6 @@ with open('simple.xls','rb') as f:
 		)
 	aString = open('simple.xls','rb').read()
 	print open_workbook(file_contents=aString)
-
 #
 # Navigate
 #
@@ -29,9 +24,8 @@ for s in wb.sheets():
 			values.append(s.cell(row,col).value)
 			print ','.join(values)
 			print
-
 #
-# Hojas
+# Sheets
 #
 book = open_workbook('simple.xls')
 print book.nsheets
@@ -42,11 +36,9 @@ for sheet_index in range(book.nsheets):
 		print book.sheet_by_name(sheet_name)
 		for sheet in book.sheets():
 			print sheet
-
 #
 # Introspect sheet
 #
-from xlrd import open_workbook,cellname
 book = open_workbook('odd.xls')
 sheet = book.sheet_by_index(0)
 print sheet.name
@@ -56,12 +48,9 @@ for row_index in range(sheet.nrows):
 	for col_index in range(sheet.ncols):
 		print cellname(row_index,col_index),'-',
 		print sheet.cell(row_index,col_index).value
-
 #
 # Dates
 #
-from datetime import date,datetime,time
-from xlrd import open_workbook,xldate_as_tuple
 book = open_workbook('types.xls')
 sheet = book.sheet_by_index(0)
 date_value =
